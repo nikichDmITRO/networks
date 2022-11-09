@@ -53,6 +53,7 @@ if (!$is_root) {
                                         <p class='move_dir hard-dropdown-items ' dir=" . $dir_value['id'] . ">Move directory</p>
                                         <p class='share_dir_with_password hard-dropdown-items ' dir=" . $dir_value['id'] . ">Share with password</p>
 
+
                                 </div>";
             }
             echo "</div>";
@@ -257,7 +258,9 @@ $(function() {
                 .done(function (data) {
                     var current_directory = $("#current_directory").val();
                     setTimeout(function () {
+                        setTimeout(function () {
                         show_directory(current_directory)
+                    }, 500)
                     }, 500);
 
             });
@@ -330,6 +333,7 @@ function show_directory(dir) {
     function refresh_drive_with_delay() {
         var current_directory = $("#current_directory").val();
        // show_directory(current_directory)
+       // show_directory(current_directory)
         setTimeout(function () {
             show_directory(current_directory)
         }, 500);
@@ -391,4 +395,5 @@ function create_html_file() {
 
 }
 </script>
+
 
